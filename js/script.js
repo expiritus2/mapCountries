@@ -41,7 +41,7 @@ var dataController = (function () {
                 var difLng = Math.abs(lng - countryLng);
 
                 var difference = (difLat + difLng);
-                if(difference < min){
+                if (difference < min) {
                     min = difference;
                     mostRelatedCountry = country;
                 }
@@ -89,10 +89,10 @@ var dataController = (function () {
         };
     }
 
-    function removeDuplicates(arr){
+    function removeDuplicates(arr) {
         let unique_array = [];
-        for(let i = 0;i < arr.length; i++){
-            if(unique_array.indexOf(arr[i]) === -1){
+        for (let i = 0; i < arr.length; i++) {
+            if (unique_array.indexOf(arr[i]) === -1) {
                 unique_array.push(arr[i])
             }
         }
@@ -131,7 +131,7 @@ var viewContoller = (function (win, doc, dataControl) {
         var resultEl = doc.getElementById('result');
         var mostRelCountry = null;
 
-        var info =  "Please insert correct data";
+        var info = "Please insert correct data";
         var splitStr = value.trim().replace(/ /g, '').split(",");
 
         var isNum = false;
@@ -155,9 +155,6 @@ var viewContoller = (function (win, doc, dataControl) {
                 info = "From <span class='bold'>" + countriesAbbrStr + "</span> the closest to your data is <span class='bold'>" + mostRelCountry + "</span>";
             }
         }
-
-
-
 
         renderResult(info, resultEl);
     }
