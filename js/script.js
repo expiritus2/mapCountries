@@ -134,13 +134,14 @@ var viewContoller = (function (win, doc, dataControl) {
         var info = "Please insert correct data";
         var splitStr = value.trim().replace(/ /g, '').split(",");
 
-        var isNum = false;
+        var isNumRes = [];
         splitStr.forEach(function (str) {
-            isNum = isNumeric(str);
+            isNumRes.push(isNumeric(str));
         });
 
-        var result = null;
+        var isNum = isNumRes.indexOf(false) === -1;
 
+        var result = null;
         var countriesAbbrStr = map.getAllCountriesByAbbr();
         if (isNum) {
             result = map.getMostRelatedByLatLng(splitStr);
