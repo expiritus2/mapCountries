@@ -126,7 +126,7 @@ var viewContoller = (function (win, doc, dataControl) {
         event.preventDefault();
 
         var input = doc.getElementById('user-input-data');
-        var value = input.value;
+        var value = input.value.toLowerCase();
 
         var resultEl = doc.getElementById('result');
         var mostRelCountry = null;
